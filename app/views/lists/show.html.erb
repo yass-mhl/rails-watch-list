@@ -1,0 +1,23 @@
+<h1 class="text-center"><%= @list.name %></h1>
+<div class="movie-card">
+<% @bookmarks.each do |bookmark| %>
+  <div class="list-group-item">
+    <%= image_tag bookmark.movie.poster_url %>
+    <%= bookmark.movie.title %> • <%= bookmark.movie.rating %>
+    <%= bookmark.movie.overview %>
+    <%= bookmark.comment %>
+    <%= link_to "Delete",
+      bookmark_path(bookmark),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+    </div>
+  </div>
+<% end %>
+</div>
+<%= link_to 'Back', root_path %>
+<%= link_to 'Add a movie', new_list_bookmark_path(@list), class:'btn btn-success' %>
+<%= button_to "Delete list",
+  list_path(@list),
+  method: :delete,
+  data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
+</div>
