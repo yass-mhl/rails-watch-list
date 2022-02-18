@@ -1,5 +1,14 @@
-<%= simple_form_for [ @list, @bookmark ] do |f| %>
-      <%= f.input :comment %>
-      <%= f.association :movie %>
-      <%= f.submit "Submit", class: "btn btn-primary" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@list.photo.key) if @list.photo.attached? %>)">
+  <div class="container">
+    <h1 class='text-center'>New</h1>
+  </div>
+</div>
+<div class="new-bookmarks text-center mt-5 mx-5">
+  <div class="new-bookmark">
+    <%= simple_form_for [ @list, @bookmark ] do |f| %>
+        <%= f.input :comment %>
+        <%= f.association :movie %>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
     <% end %>
+  </div>
+</div>

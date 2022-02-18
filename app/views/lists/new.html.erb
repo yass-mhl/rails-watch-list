@@ -1,7 +1,16 @@
- <h1>Create a new <strong>list</strong> !</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80);">
+  <div class="container">
+    <h1 class='text-center'>New</h1>
+  </div>
+</div>
+
+<div class="new-lists text-center mx-5">
+  <div class="new-list">
+    <h1>Create a new <strong>list</strong> !</h1>
     <%= simple_form_for(@list) do |f| %>
       <%= f.input :name %>
       <%= f.input :photo, as: :file %>
       <%= f.submit "Submit", class: "btn btn-success" %>
     <% end %>
   </div>
+</div>
